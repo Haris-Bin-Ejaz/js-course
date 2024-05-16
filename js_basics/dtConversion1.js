@@ -41,3 +41,43 @@ true => 1 && false => 0 and vice versa
 
 */
 
+// Operations
+
+/*
+let value = 3
+
+let negValue = -value
+
+console.log(negValue);
+
+
+
+*/
+
+let str1 = "He"
+let str2 = "llo"
+
+// console.log(str1+ str2);
+
+// console.log(1 + "2");
+
+// console.log("2" + 2 + 2);
+
+// console.log(2+1 +"2")
+
+// console.log(+true); dont do this
+
+//console.log(true+); // error  dont do this too
+
+// let value, num1, num2,num3
+
+
+// num1 = num2 = num3 = 2+ 2// dont do this too
+
+let gameCounter = 100
+
+gameCounter++;
+console.log(gameCounter);
+
+++gameCounter;
+console.log(gameCounter);
