@@ -9,8 +9,8 @@ console.log("Data Types")
 
 // It eleminated code readability
 
-console.log("Line 1")
-console.log("Line 2 part 2")
+// console.log("Line 1")
+// console.log("Line 2 part 2")
 // this is a good example
 
 // Ensure code readability.
@@ -30,6 +30,11 @@ undefined
 */
 
 
-let thisvar = null
+// let thisvar = null
 
-console.log(typeof thisvar)
+// console.log(typeof thisvar)
+
+
+
+
+
