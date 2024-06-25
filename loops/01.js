@@ -21,7 +21,7 @@ console.log("For Loops in Js\n");
 //     }
 // }
 
-let myArray = ["Flash", "Batman", "Superman"]
+//let myArray = ["Flash", "Batman", "Superman"]
 
 
 // for (let index = 0; index < myArray.length; index++) {
