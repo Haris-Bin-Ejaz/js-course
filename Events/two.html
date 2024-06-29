@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai or Code java</h1>
+
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+
+    const sayHaris = function(){
+        console.log("Haris");
+    }
+
+    //setTimeout(sayHaris,2000) // do task ontime after certain time
+
+  const changeTextV = function(){
+     document.querySelector('h1').innerHTML = 'Best Js Series'
+      }
+
+     const changeMe = setTimeout(changeTextV,2000)
+
+     //clearTimeout(changeMe)
+
+     document.querySelector('#stop').addEventListener('click',function(e){
+        clearTimeout(changeMe)
+        alert('stopped')
+     })
+
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai or Code java</h1>
+
+    <button id="start">Start</button>
+
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+    const sayDate = function(msg){
+    
+        console.log(msg,Date.now());
+    
+    }
+   
+    const interValId = setInterval(sayDate,1000,"Hi haris")
+
+    clearInterval(interValId)
+
+</script>
+</html>
