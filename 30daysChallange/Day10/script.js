@@ -164,6 +164,106 @@ form.addEventListener('submit',(e)=>{
     fields.forEach((field) => {console.log(field.value);})
 })
 
+//------------------------------
+
+let dropDown = document.querySelector("#targetSelect")
+
+applyDefault(dropDown)
+//applyStyle(dropDown)
+
+let dropDownTargetP = document.querySelector('#targetDDP')
+
+applyDefault(dropDownTargetP)
+applyStyle(dropDownTargetP)
+
+
+dropDown.addEventListener('change',()=> {
+
+    dropDownTargetP.innerHTML = dropDown.value
+
+})
+
+//-------------------------------------------------------------------
+//Activity 5
+
+function selectAllItems(){
+
+    for(let i = 1 ; i <= 5 ; i ++){
+
+        let liDemo = document.querySelector(`#targetLi${i}`)
+        applyDefault(liDemo)
+        applyStyle(liDemo)
+
+    }
+
+}
+
+selectAllItems()
+let ul = document.querySelector("#targetUl")
+let li1 = document.querySelector("#targetLi1")
+
+ul.addEventListener("click", (e)=>{
+    console.log(e.target.innerHTML, "Parent");
+}) 
+
+li1.addEventListener("click", (e)=>{
+    console.log(e.target.innerHTML);
+    //console.log(e.target.parentNode);
+   e.stopPropagation()
+}) 
+
+
+//-----------------------------
+
+let dynamicDiv = document.querySelector('.dynamicDiv')
+let dynamicDivChild = document.querySelector('#dynamicDivChild')
+let dynamicBtnAdd = document.querySelector("#dynamicBtnAdd")
+let dynamicBtnRemove = document.querySelector("#dynamicBtnRemove")
+let counter = 1
+let selectedElement = null
+
+
+applyDefault(dynamicDiv)
+applyDefault(dynamicDivChild)
+applyDefault(dynamicBtnAdd)
+applyDefault(dynamicBtnRemove)
+
+dynamicBtnAdd.addEventListener('click', (e)=>{
+
+    let dynamicP = document.createElement('p')
+    let text = document.createTextNode(`Dynamic Paragraph ${counter}`)
+    dynamicP.appendChild(text)
+    dynamicDivChild.appendChild(dynamicP)
+    counter += 1
+    //e.stopPropagation
+})
+
+
+dynamicBtnRemove.addEventListener('click', (e)=>{
+
+    if(selectedElement == dynamicDivChild){
+    
+        alert(`You cannot delete ${selectedElement}`)
+    }
+
+    else{
+        selectedElement.remove()
+    }
+
+    
+    
+})
+
+dynamicDivChild.addEventListener('click', (e)=> {
+
+console.log(e.target.innerHTML);
+
+selectedElement = e.target
+
+
+})
+
+
 
 
 
