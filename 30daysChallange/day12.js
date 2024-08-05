@@ -77,6 +77,70 @@ function throwError2(numerator, denominator){
 // .........................................................
 //Activity 3
 
+class customErrorClass extends Error{
+
+    constructor(msg){
+        super(msg)
+        this.name = "my custom error"
+    }
+}
+
+function errorInstanceCatcher() {
+
+    throw new customErrorClass("This is a custom error message");
+
+  }
+
+
+//   try {
+//     errorInstanceCatcher();
+//   } catch (error) {
+//     if (error instanceof customErrorClass) {
+//       console.log(`Caught a custom error: ${error.message}`);
+//     } else {
+//       console.log(`Caught an unexpected error: ${error.message}`);
+//     }
+//   }
+
+
+  //.......................................
+
+  class validationClass extends Error{
+
+    constructor(message){
+
+        super(message)
+
+        this.name = "Validation Error!"
+
+    }
+
+  }
+
+  function checkUserInput(input){
+
+    if (!input || input.trim() === ""){
+
+        throw new validationClass("Input cannot be empty!")
+    }
+
+    else{
+
+        return true
+
+    }
+  }
+
+// try {
+
+//     checkUserInput("")
+    
+// } catch (error) {
+    
+//     console.log(error.message);
+    
+// }
+
 
 
 // .........................................................
@@ -150,5 +214,75 @@ function throwError2(numerator, denominator){
 
 // handlePromise()
 
+
+
+// .........................................................
+//Activity 5
+
+
+function fetchFaulty (){
+
+   return fetch("http://invalidurl.com")
+   .then((data)=>console.log("Data found"))
+   .catch((error)=>console.log(error.message))
+}
+
+function fetchFaultyImproved (){
+
+   return fetch("http://invalidurlavc.ors")
+   .then((response)=>{
+
+    if(response.ok){
+
+        console.log("Data Found");
+        
+    }
+
+    else {
+
+        // to handle unsucessfull responce 
+
+        console.log("here i am");
+        
+        throw new Error("Responce was not ok")
+    }
+
+
+   })
+   .catch((error)=>{
+
+     // to handle network error or invalid url error
+
+    console.log("Invalid URL / Network Error");
+    console.log(error.message)
+})
+}
+
+//fetchFaulty()
+
+//fetchFaultyImproved()
+
+
+//......................
+
+
+async function fetchFaultyImproved2 (){
+
+    try {
+
+        let data =  await fetch("http://invalidurlavc.ors")
+
+        return data
+       
+
+    } catch (error) {
+
+        console.log(`Error : ${error}`);
+        
+        
+    }
+}
+
+fetchFaultyImproved2()
 
 
